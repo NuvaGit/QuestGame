@@ -18,8 +18,16 @@ public final int tileSize = originaltilesize * scale;
 public final int maxscreencol = 16;
 
 public final int maxscreenrow = 12;
-final int screenwidth = tileSize * maxscreencol;
-final int screenheight = tileSize * maxscreenrow;
+public final int screenwidth = tileSize * maxscreencol;
+public final int screenheight = tileSize * maxscreenrow;
+
+//world settings
+
+public final int maxWorldCol = 50;
+public final int maxWorldRow = 50;
+public final int worldWidth = tileSize * maxWorldCol; 
+public final int worldHeight = tileSize * maxWorldRow; 
+
 
 int FPS = 60; //FPS
 
@@ -28,7 +36,7 @@ TileManager tileM = new TileManager(this);
 KeyHandler keyH = new KeyHandler();
 Thread gameThread;
 
-Player player = new Player(this,keyH);
+public Player player = new Player(this,keyH);
 
 // set payer pos
 int playerX = 100;

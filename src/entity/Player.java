@@ -10,15 +10,24 @@ import javax.imageio.ImageIO;
 public class Player extends Entity{
 GamePanel gp;
 KeyHandler keyH;
+
+public final int screenx;
+public final int screeny;
+
+
 public Player(GamePanel gp,KeyHandler keyH) {
 	this.gp = gp;
 	this.keyH = keyH;
+	
+	screenx = gp.screenwidth/2 - (gp.tileSize/2);
+	screeny = gp.screenheight/2 - (gp.tileSize/2);
+	
 	setDefaultValues();
 	getPlayerImage();
 }
 public void setDefaultValues() {
-	x = 100;
-	y = 100;
+	worldx = gp.tileSize * 23;
+	worldy = gp.tileSize * 21;
 	speed = 4;
 	direction = "up";
 }
@@ -40,22 +49,22 @@ public void getPlayerImage() {
 public void update() {
 	if(keyH.upPressed == true) {
 		direction = "up";
-		y -=speed;
+		worldy -=speed;
 	}
 	else if(keyH.downPressed == true) {
 		direction = "down";
 
-		y += speed;
+		worldy += speed;
 	}
 	else if(keyH.leftPressed == true) {
 		direction = "left";
 
-		x -= speed;
+		worldx -= speed;
 	}
 	else if(keyH.rightPressed == true) {
 		direction = "right";
 
-		x += speed;
+		worldx += speed;
 	}
 }
 public void draw(Graphics2D g2) {
@@ -82,7 +91,7 @@ case "right":
 	image = right1;
 	break;
 }
-	g2.drawImage(image, x, y, gp.tileSize, gp.tileSize,null);
+	g2.drawImage(image, screenx, screeny, gp.tileSize, gp.tileSize,null);
     g2.dispose();
 	
 }
