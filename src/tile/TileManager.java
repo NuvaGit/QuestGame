@@ -26,19 +26,29 @@ public void getTileImage() {
 		//grass
 		tile[0] = new tile();
 		tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/finalgrass.png"));
+		
+		
 		// walls
 		tile[1] = new tile();
 		tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/lava2.png"));
-		// acid
+		tile[1].collision = true;
+		
+		// water
 		tile[2] = new tile();
 		tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/water.png"));
+		tile[2].collision = true;
+		
 		// dirt
 		tile[3] = new tile();
 		tile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/earth2.png"));
+		
+		
 		//trees
 		tile[4] = new tile();
 		tile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tree2.png"));
-	    //sand	
+	    tile[4].collision = true;
+		
+		//sand	
 		tile[5] = new tile();
 		tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/sand2.png"));
 		

@@ -3,6 +3,7 @@ import main.KeyHandler;
 import main.GamePanel;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -21,6 +22,8 @@ public Player(GamePanel gp,KeyHandler keyH) {
 	
 	screenx = gp.screenwidth/2 - (gp.tileSize/2);
 	screeny = gp.screenheight/2 - (gp.tileSize/2);
+	
+	solidArea = new Rectangle(8,16,gp.tileSize-16,gp.tileSize-16);
 	
 	setDefaultValues();
 	getPlayerImage();
@@ -66,6 +69,11 @@ public void update() {
 
 		worldx += speed;
 	}
+	
+	collisionOn = false;
+	gp.checker.checkTile(this);
+	
+	
 }
 public void draw(Graphics2D g2) {
 	//g2.setColor(Color.white);

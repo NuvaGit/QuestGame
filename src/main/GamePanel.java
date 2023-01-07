@@ -36,6 +36,9 @@ TileManager tileM = new TileManager(this);
 KeyHandler keyH = new KeyHandler();
 Thread gameThread;
 
+public CollisionChecker checker = new CollisionChecker(this);
+
+
 public Player player = new Player(this,keyH);
 
 // set payer pos
