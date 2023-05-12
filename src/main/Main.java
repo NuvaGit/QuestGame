@@ -13,6 +13,7 @@ public static void main(String[] args) {
 	frame.add(gamePanel);
 	
 	frame.pack();
+	frame.setResizable(true);
 	
 	frame.setLocationRelativeTo(null);
 	frame.setVisible(true);
