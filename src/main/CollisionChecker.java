@@ -59,6 +59,7 @@ entity.collisionOn = true;
 			if(gp.tileM.tile[tileNum1].collision == true|| gp.tileM.tile[tileNum2].collision == true) {
 				entity.collisionOn = true;
 				break;
+				// tileNume1 = gp.tileM.tileNum[entityrightcol][entitybottomrow];
 			}
 	}
 	// next do switch statement 
